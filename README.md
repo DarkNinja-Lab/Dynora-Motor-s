@@ -21,17 +21,17 @@
 
 ### Chat-Befehle:
 ```lua
-- `!cd_admin` - Setup/Admin-Menü öffnen (nur mit Permission)
+- !cd_admin                  -> Setup/Admin-Menü öffnen (nur mit Permission)
 ```
 
 ### Console-Befehle:
 ```lua
-- `cardealer_addspawn <name>` - Spawnpoint hinzufügen
-- `cardealer_removespawn <id>` - Spawnpoint entfernen
-- `cardealer_listspawns` - Alle Spawnpoints anzeigen
-- `cardealer_nearestspawn` - Nächsten Spawnpoint anzeigen
-- `cardealer_teleportspawn <id>` - Zu Spawnpoint teleportieren
-- `cardealer_spawn` - NPC spawnen
+- cardealer_addspawn name    -> Spawnpoint hinzufügen
+- cardealer_removespawn id   -> Spawnpoint entfernen
+- cardealer_listspawns       -> Alle Spawnpoints anzeigen
+- cardealer_nearestspawn     -> Nächsten Spawnpoint anzeigen
+- cardealer_teleportspawn id -> Zu Spawnpoint teleportieren
+- cardealer_spawn            -> NPC spawnen
 ```
 
 ---
@@ -42,6 +42,7 @@ Bei Problemen oder Fragen:
 - Prüfe die Server-Console auf Fehlermeldungen
 - Stelle sicher, dass alle Dateien korrekt hochgeladen wurden
 - Überprüfe die SAM Permissions (falls verwendet)
+- wenn alles nichts Hilft, öffne ein Ticket
 
 ---
 
