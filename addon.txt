@@ -1,0 +1,11 @@
+"AddonInfo"
+{
+    "name"              "Dynora CarDealer"
+    "version"           "2.5"
+    "up_date"           "00/00/00"
+    "author_name"       "DarkNinja"
+    "author_email"      "hahn.dominic@proton.me"
+    "author_url"        "https://github.com/DarkNinja-Lab"
+    "info"              "Autohändler für LVS-Cars, custom funktionen für DarkRP"
+    "override"          "0"
+}
