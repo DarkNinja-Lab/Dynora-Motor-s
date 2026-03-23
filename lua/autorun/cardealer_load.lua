@@ -1,6 +1,6 @@
 MyCarDealer = MyCarDealer or {}
 MyCarDealer.Config = {}
-MyCarDealer.Version = "4.0 CYBER-LILA"
+MyCarDealer.Version = "4.0"
 
 -- ============================================
 -- KONFIGURATION
@@ -95,7 +95,6 @@ if SERVER then
     AddCSLuaFile("cardealer/cl_sellplayer.lua")
     AddCSLuaFile("cardealer/cl_selloffer.lua")
     AddCSLuaFile("cardealer/cl_spawnpoints.lua")
-    AddCSLuaFile("cardealer/cl_binds.lua")
     AddCSLuaFile("cardealer/cl_insurance.lua")
     AddCSLuaFile("cardealer/cl_npcspawnpoints.lua")
     AddCSLuaFile("cardealer/cl_chatcommands.lua")
@@ -112,7 +111,6 @@ else
     include("cardealer/cl_sellplayer.lua")
     include("cardealer/cl_selloffer.lua")
     include("cardealer/cl_spawnpoints.lua")
-    include("cardealer/cl_binds.lua")
     include("cardealer/cl_insurance.lua")
     include("cardealer/cl_chatcommands.lua")
 end

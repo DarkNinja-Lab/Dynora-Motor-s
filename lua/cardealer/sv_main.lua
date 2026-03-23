@@ -16,6 +16,7 @@ util.AddNetworkString("MyCarDealer_OpenAdminMenu")
 util.AddNetworkString("MyCarDealer_SetNPCSpawnPoint")
 util.AddNetworkString("MyCarDealer_ShowAllSpawnPoints")
 util.AddNetworkString("MyCarDealer_SetNPCType")
+util.AddNetworkString("MyCarDealer_StoreEffect")
 
 -- Vehicle Cache
 MyCarDealer.VehicleCache = MyCarDealer.VehicleCache or {}

@@ -4,7 +4,6 @@ util.AddNetworkString("MyCarDealer_RequestLogs")
 util.AddNetworkString("MyCarDealer_SendLogs")
 
 net.Receive("MyCarDealer_SaveConfig", function(len, ply)
-    -- ... restlicher Code bleibt gleich
     if not MyCarDealer.IsAdmin(ply) then
         MyCarDealer.ChatPrint(ply, "Keine Berechtigung!")
         return
