@@ -1,4 +1,4 @@
-# Dynora CarDealer - Update v3.1 CYBER-LILA
+# Dynora CarDealer - Update v0.5.1
 
 ## ÄNDERUNGEN IN DIESEM UPDATE
 
@@ -77,7 +77,7 @@ end
 - **Statistiken** (gefahrene KM, Unfälle, etc.)
 
 ### 4. Mehr LVS-Features
-- **Tuning-Teile speichern** (Turbo, Kompressor, etc.)
+- **Tuning-Teile speichern** (Turbo, Kompressor, etc.) -- BUG -- > 
 - **Kilometerzähler** pro Fahrzeug
 - **Schadenssystem** (mit Repair-Option)
 - **Kraftstoffverbrauch** (realistischer)
@@ -150,6 +150,6 @@ Bei Problemen oder Fragen:
 
 ---
 
-**Version:** 3.1 CYBER-LILA  
-**Author:** DarkNinja (modifiziert)  
-**Datum:** 2026-03-11
+**Version:** 0.5.1
+**Author:** DarkNinja, ChiHydra
+**Datum:** 2026-03-23

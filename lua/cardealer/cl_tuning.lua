@@ -195,12 +195,12 @@ function PANEL:Init()
     self:AddSection(scroll, "LVS PERFORMANCE", theme.success)
     
     local lvsItems = {
-        {id = "turbo", name = "TURBO LADER", price = 2500, desc = "Erhoeht die Motorleistung"},
-        {id = "compressor", name = "KOMPRESSOR", price = 3000, desc = "Kontinuierlicher Ladedruck"},
-        {id = "racingTires", name = "SPORTREIFEN", price = 1500, desc = "Bessere Haftung"},
-        {id = "exhaust", name = "SPORTAUSPUFF", price = 800, desc = "Backfire-Effekt"},
-        {id = "gauge", name = "RACING HUD", price = 500, desc = "Digitale Anzeige"},
-        {id = "manualTransmission", name = "SCHALTGETRIEBE", price = 1000, desc = "Manuelles Schalten"}
+        {id = "turbo", name = "TURBO LADER", price = 250, desc = "Erhoeht die Motorleistung"},
+        {id = "compressor", name = "KOMPRESSOR", price = 300, desc = "Kontinuierlicher Ladedruck"},
+        {id = "racingTires", name = "SPORTREIFEN", price = 150, desc = "Bessere Haftung"},
+        {id = "exhaust", name = "SPORTAUSPUFF", price = 80, desc = "Backfire-Effekt"},
+        {id = "gauge", name = "RACING HUD", price = 50, desc = "Digitale Anzeige"},
+        {id = "manualTransmission", name = "SCHALTGETRIEBE", price = 100, desc = "Manuelles Schalten"}
     }
     
     self.lvsToggles = {}
@@ -358,8 +358,8 @@ function PANEL:OpenColorPicker(title, defaultColor, callback, accentColor)
     local theme = MyCarDealer.Theme
     accentColor = accentColor or theme.primary
     
-    local frame = vgui.Create("DFrame")
-    frame:SetSize(450, 400)
+    local frame = vgui.Create("DFrame")   -- Main DFrame of the ColorPicker Interface
+    frame:SetSize(450, 380) -- l. h
     frame:Center()
     frame:SetTitle("")
     frame:ShowCloseButton(false)
@@ -369,31 +369,19 @@ function PANEL:OpenColorPicker(title, defaultColor, callback, accentColor)
     
     frame.Paint = function(s, w, h)
         draw.RoundedBox(16, 0, 0, w, h, theme.surface)
-        surface.SetDrawColor(accentColor)
-        surface.DrawOutlinedRect(0, 0, w, h, 2)
+        surface.SetDrawColor(accentColor)    -- to be changed -- opaque/invisible? 
+        surface.DrawOutlinedRect(0, 0, w/2, h, 0)
         
         -- Header
         surface.SetDrawColor(theme.elevated)
-        surface.DrawRect(0, 0, w, 50)
-        draw.SimpleText(title, "DermaLarge", w/2, 25, accentColor, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
+        surface.DrawRect(0, 10, w, 50)
+        draw.SimpleText(title, "DermaLarge", w/2, 35, accentColor, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
     end
     
-    -- Close Button (X)
-    local closeBtn = vgui.Create("DButton", frame)
-    closeBtn:SetSize(40, 40)
-    closeBtn:SetPos(400, 5)
-    closeBtn:SetText("X")
-    closeBtn:SetFont("DermaLarge")
-    closeBtn:SetTextColor(theme.textPrimary)
-    closeBtn.Paint = function(s, w, h)
-        draw.RoundedBox(8, 0, 0, w, h, s:IsHovered() and theme.error or Color(0,0,0,0))
-    end
-    closeBtn.DoClick = function()
-        frame:Remove()
-    end
+
     
-    local mixer = vgui.Create("DColorMixer", frame)
-    mixer:SetSize(400, 250)
+    local mixer = vgui.Create("DColorMixer", frame) -- Color Picker itself
+    mixer:SetSize(360, 200)
     mixer:SetPos(25, 70)
     mixer:SetColor(defaultColor)
     mixer:SetPalette(false)
@@ -404,12 +392,12 @@ function PANEL:OpenColorPicker(title, defaultColor, callback, accentColor)
     
     -- Live Preview
     local preview = vgui.Create("DPanel", frame)
-    preview:SetSize(400, 40)
-    preview:SetPos(25, 330)
+    preview:SetSize(325, 40)
+    preview:SetPos(25, 275) -- color preview position
     preview.Paint = function(s, w, h)
         draw.RoundedBox(8, 0, 0, w, h, currentColor)
         surface.SetDrawColor(theme.textPrimary)
-        surface.DrawOutlinedRect(0, 0, w, h, 2)
+        surface.DrawOutlinedRect(0, 0, w, h, 0)
         draw.SimpleText("VORSCHAU", "DermaDefaultBold", w/2, h/2, Color(255-currentColor.r, 255-currentColor.g, 255-currentColor.b), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
     end
     
@@ -420,7 +408,7 @@ function PANEL:OpenColorPicker(title, defaultColor, callback, accentColor)
     -- Buttons
     local okBtn = vgui.Create("DButton", frame)
     okBtn:SetSize(190, 45)
-    okBtn:SetPos(25, 340)
+    okBtn:SetPos(25, 325)
     okBtn:SetText("")
     okBtn.Paint = function(s, w, h)
         draw.RoundedBox(8, 0, 0, w, h, s:IsHovered() and accentColor or Color(accentColor.r-40, accentColor.g-40, accentColor.b-40))
@@ -435,7 +423,7 @@ function PANEL:OpenColorPicker(title, defaultColor, callback, accentColor)
     
     local cancelBtn = vgui.Create("DButton", frame)
     cancelBtn:SetSize(190, 45)
-    cancelBtn:SetPos(235, 340)
+    cancelBtn:SetPos(235, 325)
     cancelBtn:SetText("")
     cancelBtn.Paint = function(s, w, h)
         draw.RoundedBox(8, 0, 0, w, h, s:IsHovered() and theme.error or Color(200, 50, 50))
@@ -589,4 +577,4 @@ end
 
 vgui.Register("MyCarDealer_Tuning", PANEL, "DFrame")
 
-print("[Dynora Motor´s] cl_tuning.lua loaded (Fixed v4.1 - Better spacing)")
+print("[Dynora Motor´s] cl_tuning.lua loaded (Patch 1.1 Tuning Color Picker Überarbeitung)")
